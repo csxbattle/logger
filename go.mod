@@ -1,4 +1,4 @@
-module github.com/csxbattle/logger
+module git.zonatelecom.ru/tools/logger
 
 go 1.17
 
