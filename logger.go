@@ -162,10 +162,6 @@ func (logger *Logger) SetApplyTemplate(cb func(*string)) {
 // Init prepare logger structure
 func Init(config *Config) {
 	logger = createSugaredLogger(config)
-}
-
-func init() {
-	logger = createSugaredLogger(nil)
 	Debug = logger.Debug
 	Debugf = logger.Debugf
 	Debugw = logger.Debugw
@@ -177,6 +173,10 @@ func init() {
 	Warnf = logger.Warnf
 	Panic = logger.Panic
 	Panicf = logger.Panicf
+}
+
+func init() {
+	Init(nil)
 }
 
 func prepareConfig(config *Config) zapcore.Core {
